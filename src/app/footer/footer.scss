@@ -1,0 +1,19 @@
+.footer-container{
+  width: 90%;
+  display:flex;
+  justify-content:between;
+  font-size:9px;
+  color:rgb(156 163 175);
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-left:41px;
+}
+
+.footer-main {
+  border-top-width: 1px;
+  --tw-bg-opacity: 1;
+  background-color:white;
+  margin-top: 1.5rem;
+}

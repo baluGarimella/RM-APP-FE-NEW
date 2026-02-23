@@ -1,0 +1,157 @@
+.violet-blue-div {
+  background-color: rgba(26, 74, 122);
+  color: white;
+  padding: 0px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(138, 43, 226, 0.3);
+}
+.text-blue-200 {
+    --tw-text-opacity: 1;
+    color: rgba(191, 219, 254);
+    font-size: 9px;
+    margin-top: -9px;
+}
+
+.text-blue-500 {
+    color: rgba(191, 219, 254);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.star-box {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.star-icon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1); /* Makes the icon white */
+}
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tracking-wide {
+    letter-spacing: .025em;
+}
+.font-bold {
+    font-weight: 700;
+}
+.text-sm {
+    font-size: .875rem;
+    line-height: 1.25rem;
+}
+
+.title-section h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.title-section span {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.green-bullet {
+  color: #00FF00; /* Bright green color */
+  font-size: 12px;
+  line-height: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.right-section h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.user-profile {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .left-section {
+    justify-content: center;
+  }
+  
+  .right-section {
+    justify-content: center;
+  }
+}

@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Global background color for entire webpage */
+html, body {
+  background-color: rgb(240 242 245);
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Reset any conflicting styles */
+body {
+  margin: 0;
+  padding: 0;
+}
