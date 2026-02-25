@@ -2,7 +2,6 @@
   background-color: rgba(26, 74, 122);
   color: white;
   padding: 0px 25px;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(138, 43, 226, 0.3);
 }
 .text-blue-200 {
@@ -33,14 +32,13 @@
 
 .star-box {
   background-color: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
   padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.5);
@@ -119,7 +117,7 @@
 }
 
 .user-profile {
-  background-color: rgba(255, 255, 255, 0.2);
+background-image: linear-gradient(to right bottom, #1a4a7a, #1f5285, #245b91, #28649c, #2d6da8);
   color: white;
   width: 40px;
   height: 40px;
@@ -129,10 +127,9 @@
   justify-content: center;
   font-weight: 600;
   font-size: 1.1rem;
-  border: 2px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
@@ -146,11 +143,11 @@
     gap: 15px;
     text-align: center;
   }
-  
+
   .left-section {
     justify-content: center;
   }
-  
+
   .right-section {
     justify-content: center;
   }

@@ -63,7 +63,8 @@
   padding: 20px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 2px 4px 15px 8px #C4BDC4;
+box-shadow: 2px 4px 15px 8px #C4BDC4;
   border: 1px solid #e2e4e9;
 }
 
@@ -98,18 +99,20 @@
   align-items: center;
   background-color: #fff;
   margin-bottom: 10px;
+  transition: linear;
+  transition-duration: 0.1s;
 }
 .meeting-card:hover{
-  box-shadow:2px 3px 4px grey, 1px 2px 3px #ff2323;
+  box-shadow:0px 3px 6px #c1c1c1, 2px 3px 10px #a9a9a9;
   border:1px solid #2d6da866;
 }
- 
+
 .left-section {
   display: flex;
   align-items: center;
   gap: 16px;
 }
- 
+
 .profile-img {
   width: 40px;
     height: 40px;
@@ -117,92 +120,98 @@
   border-radius: 50%;
   object-fit: cover;
 }
- 
+
 .details {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
- 
+
 .name-row {
   display: flex;
   align-items: center;
   gap: 10px;
-  
+
 }
- 
+
 .name-row:hover {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-duration: .15s;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
- 
+
 .name {
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #13161F;
 }
- 
+
+.meeting-card:hover .name {
+  color: #1A4A7A;
+}
+
 .tag {
   border: 1px solid #d0d0d0;
   padding: 2px 8px;
   font-size: 12px;
   border-radius: 4px;
   color: #555;
+  font-weight: 600;
 }
- 
+
 .info-row {
-  font-size: 13px;
-  color: #666;
+  font-size: 11px;
+  color: #6B7280;
   display: flex;
   align-items: center;
   gap: 8px;
 }
- 
+
 .divider {
   color: #ccc;
 }
- 
+
 .video-call {
   display: flex;
   align-items: center;
   gap: 4px;
 }
- 
+
 .teams-icon {
   width: 14px;
   height: 14px;
 }
- 
+
 .right-section {
   display: flex;
   align-items: center;
   gap: 16px;
 }
- 
+
 .status-badge {
   padding: 4px 10px;
   border-radius: 12px;
   font-size: 12px;
   font-weight: 500;
 }
- 
+
 .status-badge.ready {
   background-color: #e8f5e9;
   color: #2e7d32;
 }
- 
+
 .status-badge.in-progress {
   background-color: #fff8e1;
   color: #f9a825;
 }
- 
+
 .status-badge.not-started {
   background-color: #ffebee;
   color: #c62828;
 }
- 
+
 .action-btn {
-  background-color: #1565c0;
+  background-color: #2d5a8d;
   color: white;
   border: none;
   padding: 6px 14px;
@@ -212,17 +221,17 @@
   align-items: center;
   gap: 6px;
 }
- 
+
 .action-btn:hover {
   background-color: #0d47a1;
 }
- 
+
 .arrow {
   font-size: 14px;
 }
 
 .user-circle {
-  background-color: rgba(26, 74, 122);
+background-image: linear-gradient(to right bottom, #1a4a7a, #1f5285, #245b91, #28649c, #2d6da8);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -235,15 +244,15 @@
   height: 40px;
   font-size: 11.96px;
 }
- 
+
 .summary-cards-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   width: 100%;
 }
- 
- 
+
+
 .summary-card {
   padding: 0.75rem;
   background-color: rgb(255, 255, 255);
@@ -251,8 +260,8 @@
   text-align: center;
   border: 1px solid #e5e7eb;
 }
- 
- 
+
+
 .card-title {
   color: rgb(107, 114, 128);
   letter-spacing: 0.05em;
@@ -260,27 +269,27 @@
   font-size: 10px;
   margin: 0;
 }
- 
- 
+
+
 .card-value {
   margin-top: 6px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
 }
- 
- 
+
+
 .value-1 {
   color: rgb(26, 74, 122);
 }
- 
+
 .value-2 {
   color: rgb(5, 150, 105);
 }
- 
+
 .value-3 {
   color: rgb(26, 74, 122);
 }
- 
+
 .value-4 {
   color: rgb(37, 99, 235);
 }
@@ -293,3 +302,27 @@ h2.text-lg.font-bold.textcolor-primary {
     color: rgba(19, 74, 122) !important;
 }
 
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Ready - Green */
+.status-ready {
+  color: rgb(4 120 87);
+  background-color: rgb(236 253 245);
+}
+
+/* In Progress - Orange */
+.status-inprogress {
+  color: rgb(29 78 216);
+  background-color: rgb(239 246 255);
+}
+
+/* Not Started - Gray */
+.status-notstarted {
+  color: rgb(107 114 128);
+  background-color: rgb(243 244 246);
+}
