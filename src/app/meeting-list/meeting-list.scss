@@ -226,6 +226,15 @@ box-shadow: 2px 4px 15px 8px #C4BDC4;
   background-color: #0d47a1;
 }
 
+/* Button style for meeting status 1 (Ready) */
+.action-btn.status-ready-btn {
+  background-color: rgb(107 114 128);
+}
+
+.action-btn.status-ready-btn:hover {
+  background-color: #0d47a1
+}
+
 .arrow {
   font-size: 14px;
 }
@@ -316,13 +325,13 @@ h2.text-lg.font-bold.textcolor-primary {
 }
 
 /* In Progress - Orange */
-.status-inprogress {
+.status-progress {
   color: rgb(29 78 216);
   background-color: rgb(239 246 255);
 }
 
 /* Not Started - Gray */
-.status-notstarted {
+.status-not-started,.status-completed {
   color: rgb(107 114 128);
   background-color: rgb(243 244 246);
 }
