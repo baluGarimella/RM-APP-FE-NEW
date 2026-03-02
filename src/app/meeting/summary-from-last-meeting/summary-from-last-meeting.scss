@@ -1,0 +1,27 @@
+.card-title-desc {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    --tw-text-opacity: 1;
+    color: rgb(26 74 122 / var(--tw-text-opacity));
+  }
+  .card-content-desc {
+    font-size:11px;
+    margin-bottom:5px;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+
+  }
+  .card-heading-desc {
+    -tw-text-opacity: 1;
+    color: rgb(55 65 81);
+    line-height: 1.625rem;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .card-heading-content-desc {
+    -tw-text-opacity: 1;
+    color: rgb(31 41 55);
+    font-weight:600;
+  }
