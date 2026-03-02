@@ -6,6 +6,7 @@ import { ClientProfileComponent } from './client-profile/client-profile.componen
 import { PersonalAspectsComponent } from './personal-aspects/personal-aspects.component';
 import { ClientConstraintsComponent } from './client-constraints/client-constraints.component';
 import { SummaryFromLastMeeting } from './summary-from-last-meeting/summary-from-last-meeting';
+import { Performance } from "./performance/performance";
 
 @Component({
   selector: 'app-meeting',
@@ -17,7 +18,8 @@ import { SummaryFromLastMeeting } from './summary-from-last-meeting/summary-from
     OverviewComponent,
     PersonalAspectsComponent,
     ClientConstraintsComponent,
-    SummaryFromLastMeeting
+    SummaryFromLastMeeting,
+    Performance
 ],
   templateUrl: './meeting.component.html',
   styleUrls: ['./meeting.component.scss']

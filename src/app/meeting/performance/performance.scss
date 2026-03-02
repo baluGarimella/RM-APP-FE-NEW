@@ -1,0 +1,34 @@
+.card-title-desc {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    --tw-text-opacity: 1;
+    color: rgb(26 74 122 / var(--tw-text-opacity));
+}
+.content-header-desc {
+    display: flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom: 10px;
+}
+.content-header-desc1 {
+    --tw-text-opacity: 1;
+    color: rgb(26 74 122);
+    font-weight: 700;
+    font-size: 20px;
+}
+.content-header-desc2 {
+    --tw-text-opacity: 1;
+    color: rgb(107 114 128);
+    font-size: 11px;
+}
+
+.graph-x-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175);
+    font-size:10px;
+}
