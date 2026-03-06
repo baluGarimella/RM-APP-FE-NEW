@@ -6,52 +6,15 @@
         </h3>
       </div>
       <div>
-        <div class="transaction-item">
-            <span class="transaction-item-label">
-                BUY
+        <div class="transaction-item" *ngFor="let transaction of transactions">
+            <span class="transaction-item-label" [ngClass]="{'transaction-item-label-red': transaction.type === 'SELL', 'transaction-item-label-green': transaction.type === 'BUY'}">
+                {{ transaction.type }}
             </span>
-            <span class="transaction-item-label1">ASML</span>
+            <span class="transaction-item-label1">{{ transaction.description }}</span>
             <span class="transaction-item-label2">
-                €85K EUR
-            </span>
-        </div>
-        
-          <div class="transaction-item">
-            <span class="transaction-item-label">
-                BUY
-            </span>
-            <span class="transaction-item-label1">Sustainable Global Equity</span>
-            <span class="transaction-item-label2">
-                €200K EUR
-            </span>
-        </div>
-        <div class="transaction-item">
-            <span class="transaction-item-label-red">
-                SELL
-            </span>
-            <span class="transaction-item-label1">Euro Gov Bond Fund</span>
-            <span class="transaction-item-label2">
-                €150K EUR
-            </span>
-        </div>
-        <div class="transaction-item">
-            <span class="transaction-item-label">
-                BUY
-            </span>
-            <span class="transaction-item-label1">Green Bond Fund EUR</span>
-            <span class="transaction-item-label2">
-                €100K EUR
-            </span>
-        </div>
-        <div class="transaction-item">
-            <span class="transaction-item-label">
-                BUY
-            </span>
-            <span class="transaction-item-label1">iShares Europe ESG</span>
-            <span class="transaction-item-label2">
-                €120K EUR
+                €{{ transaction.amount | number:'1.0-0' }} EUR
             </span>
         </div>
       </div>
     </div>
-    </div>
+</div>

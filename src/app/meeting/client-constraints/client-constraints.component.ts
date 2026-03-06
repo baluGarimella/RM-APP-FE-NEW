@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MeetingsService } from '../../services/meetings.service';
 
 @Component({
   selector: 'app-client-constraints',
@@ -10,10 +11,14 @@ import { CommonModule } from '@angular/common';
 })
 export class ClientConstraintsComponent implements OnInit {
 
-  constructor() { }
+  constraints: string[] = [];
+
+  constructor(private meetingsService: MeetingsService) { }
 
   ngOnInit(): void {
-    
+    this.meetingsService.getConstraints().subscribe((data: any) => {
+      this.constraints = data;
+    });
   }
 
 }

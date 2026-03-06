@@ -1,13 +1,13 @@
 <div class="outer-box" style="background-color:ghostwhite">
-
-<div class="card anim-up" style="animation-delay: 60ms">
+  <div class="card anim-up" style="animation-delay: 60ms">
     <div class="card-header">
       <h3 class="card-title">Client Portfolio Overview</h3>
     </div>
-    <p class="portfolio-value">
-      Portfolio Market Value: <span class="value-highlight">€12.5M EUR</span>
-    </p>
-    <div class="portfolio-details">
+    <div *ngIf="overviewData; else loading">
+      <p class="portfolio-value">
+        Portfolio Market Value: <span class="value-highlight">{{ overviewData.marketValue }}</span>
+      </p>
+      <div class="portfolio-details">
       <svg width="140" height="140" viewBox="0 0 140 140">
         <path
           d="M70,70 L70,4 A66,66 0 1,1 61.7280065847559,135.47957028675552 Z"
@@ -88,39 +88,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Equities</td>
-              <td>52%</td>
-              <td>40% - 65%</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>Fixed Income</td>
-              <td>25%</td>
-              <td>15% - 35%</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>Real Estate</td>
-              <td>10%</td>
-              <td>5% - 15%</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>Alternatives</td>
-              <td>7%</td>
-              <td>0% - 15%</td>
-              <td>YES</td>
-            </tr>
-            <tr>
-              <td>Liquidity</td>
-              <td>6%</td>
-              <td>2% - 10%</td>
-              <td>YES</td>
+            <tr *ngFor="let asset of overviewData.assets">
+              <td>{{ asset.name }}</td>
+              <td>{{ asset.current }}</td>
+              <td>{{ asset.bandwidth }}</td>
+              <td>{{ asset.inRange }}</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+    <ng-template #loading>
+      <p>Loading portfolio overview...</p>
+    </ng-template>
   </div>
-  </div>
+</div>
