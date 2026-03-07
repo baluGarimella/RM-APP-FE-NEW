@@ -1,26 +1,16 @@
-
 <div class="outer-box" style="background-color:ghostwhite;;margin-top:-55px">
-<div class="card anim-up" style="animation-delay: 60ms">
+  <div class="card anim-up" style="animation-delay: 60ms">
     <div class="card-header">
       <h3 class="card-title" style="color: rgb(26, 74, 122);">Client Personal Aspects</h3>
     </div>
-    <div class="card-content">
-      <p class="info-row">
-        <span  class="font-semibold text-gray-800 padding-left:1px">Family:</span>
-        <span class="text-gray-600">Married, 2 kids (daughter 17, son 14)</span>
-      </p>
-      <p class="info-row">
-        <span class="font-semibold text-gray-800">Date of Birth:</span>
-        <span class="text-gray-600"> 14 Mar 1974</span>
-      </p>
-      <p class="info-row">
-        <span class="font-semibold text-gray-800">Hobbies:</span>
-        <span class="text-gray-600"> Sailing, Photography, Formula One</span>
-      </p>
-      <p class="info-row">
-        <span class="font-semibold text-gray-800">Other:</span>
-        <span class="text-gray-600"> Annual family trip to Provence. Art collector — contemporary Dutch artists.</span>
+    <div class="card-content" *ngIf="personalAspectsData; else loading">
+      <p class="info-row" *ngFor="let aspect of personalAspectsData">
+        <span class="font-semibold text-gray-800">{{ aspect.label }}:</span>
+        <span class="text-gray-600">{{ aspect.value }}</span>
       </p>
     </div>
+    <ng-template #loading>
+      <p>Loading personal aspects...</p>
+    </ng-template>
   </div>
-  </div>
+</div>

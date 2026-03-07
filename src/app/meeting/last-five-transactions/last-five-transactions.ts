@@ -1,6 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MeetingsService } from '../../services/meetings.service';
 
 @Component({
   selector: 'app-last-five-transactions',
@@ -11,10 +11,19 @@ import { CommonModule } from '@angular/common';
 })
 export class LastFiveTransactions implements OnInit {
 
-  constructor() { }
+  transactions: any[] = [];
+  transactionTypes: { sell: string; buy: string } = { sell: '', buy: '' };
+
+  constructor(private meetingsService: MeetingsService) { }
 
   ngOnInit(): void {
-    
+    this.meetingsService.getLastFiveTransactions().subscribe(data => {
+      this.transactions = data;
+    });
+
+    this.meetingsService.getTransactionTypes().subscribe(types => {
+      this.transactionTypes = types;
+    });
   }
 
 }

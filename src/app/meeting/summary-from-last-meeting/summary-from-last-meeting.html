@@ -18,23 +18,26 @@
         </span>
         <h3 class="card-title-desc">Summary from Last Meeting</h3>
       </div>
-      <div>
+      <div *ngIf="summaryData">
         <p class="card-content-desc">
             Last meeting date: 
-            20 Jan 2026
+            {{ summaryData.lastMeetingDate }}
         </p>
         <p class="card-heading-desc">
             <span class="card-heading-content-desc">
                 Main Discussion Points: 
             </span>
-Client's business performed well in H2 2025 with strong revenue growth. He had accumulated €800K cash from dividends and business income which he wanted to deploy. His preference was to increase sustainable European equity exposure, particularly in technology and green energy. Discussed impact of ECB rate trajectory on bond allocation. Agreed that RM would prepare specific ESG small-cap options for next meeting.
+            {{ summaryData.mainDiscussionPoints }}
         </p>
         <p class="card-heading-desc">
             <span class="card-heading-content-desc">
                 Client Questions: 
             </span>
-            What is the outlook for European sustainable tech? Should I reduce my bond allocation given the rate environment?
+            {{ summaryData.clientQuestions }}
         </p>
       </div>
+      <div *ngIf="!summaryData">
+        <p>Loading summary...</p>
+      </div>
     </div>
-    </div>
+</div>

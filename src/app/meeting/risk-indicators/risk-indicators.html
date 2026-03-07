@@ -3,39 +3,18 @@
       <div class="card-header">
         <h3 class="card-title-desc">Risk Indicators</h3>
       </div>
-      <div class="riskIndicatorData">
-        <div class="riskIndicatorDesc">
+      <div class="riskIndicatorData" *ngIf="riskData">
+        <div class="riskIndicatorDesc" *ngFor="let indicator of riskData">
             <span class="riskIndicatorItemLabel">
-                Concentration Risk: 
+                {{ indicator.label }}: 
             </span>
             <span class="riskIndicatorItemValue">
-                14% (ASML)
+                {{ indicator.value }}
             </span>
         </div>
-        <div class="riskIndicatorDesc">
-            <span class="riskIndicatorItemLabel">
-                Sharpe Ratio: 
-            </span>
-            <span class="riskIndicatorItemValue">
-                1.4
-            </span>
-        </div>
-        <div class="riskIndicatorDesc">
-            <span class="riskIndicatorItemLabel">
-                VaR (95%): 
-            </span>
-            <span class="riskIndicatorItemValue">
-                €425K
-            </span>
-        </div>
-        <div class="riskIndicatorDesc">
-            <span class="riskIndicatorItemLabel">
-                Max Drawdown (12M): 
-            </span>
-            <span class="riskIndicatorItemValue">
-                -6.2%
-            </span>
-        </div>
+      </div>
+      <div *ngIf="!riskData">
+        <p>Loading risk indicators...</p>
+      </div>
     </div>
-    </div>
-    </div>
+</div>
