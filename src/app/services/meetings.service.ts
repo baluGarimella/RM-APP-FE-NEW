@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { ClientConstraints, ClientInfo } from '../interfaces/client.interface';
+import { ClientConstraints, ClientInfo, ClientPerformance } from '../interfaces/client.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -74,13 +74,16 @@ export class MeetingsService {
     ]);
   }
 
-  getPerformanceData(): Observable<any> {
+  getPerformanceData(rmId:string, clientId:string): Observable<ClientPerformance> {
+
+   return this.http.get<ClientPerformance>(`${this.apiUrl}/performance-months?rmId=2345&clientId=${clientId}`);
+
     // Mock data for now
-    return of({
-      ytdReturn: '+7.2%',
-      graphPath: 'M0,70 L0,51.43939393939394 30.90909090909091,45.25252525252526 ...',
-      graphPoints: '0,51.43939393939394 30.90909090909091,45.25252525252526 ...',
-      xAxisLabels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb']
-    });
+    // return of({
+    //   ytdReturn: '+7.2%',
+    //   graphPath: 'M0,70 L0,51.43939393939394 30.90909090909091,45.25252525252526 ...',
+    //   graphPoints: '0,51.43939393939394 30.90909090909091,45.25252525252526 ...',
+    //   xAxisLabels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb']
+    // });
   }
 }

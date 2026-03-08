@@ -35,11 +35,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MeetingComponent implements OnInit {
   clientUniqueId = signal<string | null>(null);
-
+  relationshipManagerId = signal<string | null>(null);
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
+      this.relationshipManagerId.set(params.get('rmId'));
       this.clientUniqueId.set(params.get('clientId'));
       // You can now use this.clientUniqueId() in your component
     });

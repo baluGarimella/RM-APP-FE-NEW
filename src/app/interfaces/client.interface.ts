@@ -15,5 +15,12 @@ export interface ClientConstraints {
   constraints: string[];
 }
 
+export interface ClientPerformance {
+  ytdReturn: string;
+  monthlyData: MonthlyPerformance[];
+}
 
-
+export interface MonthlyPerformance {
+  month: string;
+  returnPercentage: string;
+}

@@ -102,7 +102,7 @@ export class MeetingList implements OnInit {
   }
 
   // Navigation method to meeting component
-  navigateToMeeting(clientId: string): void {
-    this.router.navigate(['/meeting'], { queryParams: { clientId: clientId } });
+  navigateToMeeting(rmId:string, clientId: string): void {
+    this.router.navigate(['/meeting'], { queryParams: { rmId: rmId, clientId: clientId } });
   }
 }
