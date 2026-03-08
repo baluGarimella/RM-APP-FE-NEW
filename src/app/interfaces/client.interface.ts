@@ -36,3 +36,10 @@ export interface Transaction {
   currency: string;
 }
 
+export interface PersonalAspect {
+  family: string;
+  dateOfBirth: string;
+  hobbies: string;
+  other: string;
+}
+

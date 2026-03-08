@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { ClientConstraints, ClientInfo, ClientPerformance, LastTransactions } from '../interfaces/client.interface';
+import { ClientConstraints, ClientInfo, ClientPerformance, LastTransactions, PersonalAspect } from '../interfaces/client.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -58,14 +58,8 @@ export class MeetingsService {
     });
   }
 
-  getPersonalAspectsData(): Observable<any[]> {
-    // Mock data for now
-    return of([
-      { label: 'Family', value: 'Married, 2 kids (daughter 17, son 14)' },
-      { label: 'Date of Birth', value: '14 Mar 1974' },
-      { label: 'Hobbies', value: 'Sailing, Photography, Formula One' },
-      { label: 'Other', value: 'Annual family trip to Provence. Art collector — contemporary Dutch artists.' }
-    ]);
+  getPersonalAspectsData(clientId:string): Observable<PersonalAspect> {
+    return this.http.get<PersonalAspect>(`${this.apiUrl}/personal-aspects?clientId=${clientId}`);
   }
 
   getPerformanceData(rmId:string, clientId:string): Observable<ClientPerformance> {
