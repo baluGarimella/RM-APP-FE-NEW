@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { ClientConstraints, ClientInfo, ClientPerformance, LastTransactions, PersonalAspect } from '../interfaces/client.interface';
+import { ClientConstraints, ClientInfo, ClientPerformance, LastTransactions, MarketOutlookInfo, PersonalAspect } from '../interfaces/client.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -73,5 +73,10 @@ export class MeetingsService {
     //   graphPoints: '0,51.43939393939394 30.90909090909091,45.25252525252526 ...',
     //   xAxisLabels: ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb']
     // });
+  }
+
+  getMarketOutlook(rmId:string, clientId:string): Observable<MarketOutlookInfo> {
+
+   return this.http.get<MarketOutlookInfo>(`${this.apiUrl}/market/outlook?rmId=2345&clientId=${clientId}`);
   }
 }

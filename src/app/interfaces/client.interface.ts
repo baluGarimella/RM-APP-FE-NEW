@@ -1,3 +1,5 @@
+import { MarketOutlook } from "../meeting/market-outlook/market-outlook";
+
 export interface ClientInfo {
   clientId: string;
   rmId: string;//mr or mrs or ms
@@ -43,3 +45,17 @@ export interface PersonalAspect {
   other: string;
 }
 
+export interface MarketOutlookInfo {
+  marketOutlookSummary: string;
+  marketOutlook: MarketOutlookInsight;
+}
+
+export interface MarketOutlookInsight {
+  insights: MarketInsight[];
+}
+
+export interface MarketInsight {
+  title: string;
+  description: string;
+  status: string;
+}

@@ -43,7 +43,7 @@
 <app-personal-aspects [clientId]="clientUniqueId()"></app-personal-aspects>
 <app-risk-indicators></app-risk-indicators>
 <app-client-constraints [clientId]="clientUniqueId()"> </app-client-constraints>
-<app-market-outlook></app-market-outlook>
+<app-market-outlook [clientId]="clientUniqueId()" [rmId]="relationshipManagerId()"></app-market-outlook>
 </div>
 <app-ai-recommendations></app-ai-recommendations>
 
