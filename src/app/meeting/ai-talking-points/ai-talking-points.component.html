@@ -1,0 +1,81 @@
+<div class="outer-box" style="background-color:ghostwhite;margin-top:-153px;">
+  <div class="card anim-up">
+
+  <div class="flex items-center gap-2 mb-2">
+    <span class="text-[#1a4a7a]"
+      ><svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path></svg
+    ></span>
+    <h3 class="heading font-bold text-[#1a4a7a] uppercase tracking-wide">
+      AI-Generated Talking Points
+    </h3>
+  </div>
+  <div class="grid grid-cols-2 gap-3">
+    <div>
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">
+        {{aiTalkingPoints()?.conversationTitle}}
+      </p>
+      <div class="space-y-1.5">
+        <ng-container *ngFor="let item of aiTalkingPoints()?.conversationBody">
+        <div
+          class="border-left-width rounded-r-lg p-2.5 text-[12px] text-gray-700 leading-relaxed border-l-blue-500 bg-blue-50/40"
+        >
+        {{item}}
+        </div>
+      </ng-container>
+      </div>
+    </div>
+    <div>
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">
+        {{aiTalkingPoints()?.portfolioTitle}}
+      </p>
+      <div class="space-y-1.5">
+        <ng-container *ngFor="let item of aiTalkingPoints()?.portfolioBody">
+        <div
+          class="border-left-width rounded-r-lg p-2.5 text-[12px] text-gray-700 leading-relaxed border-l-emerald-500 bg-emerald-50/40"
+        >
+        {{item}}
+        </div>
+        </ng-container>
+       
+      </div>
+    </div>
+    <div>
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">
+        {{aiTalkingPoints()?.productTitle}}
+      </p>
+      <div class="space-y-1.5">
+        <div
+          class="border-left-width rounded-r-lg p-2.5 text-[12px] text-gray-700 leading-relaxed border-l-purple-500 bg-purple-50/40"
+        >
+        {{aiTalkingPoints()?.productBody}}
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">
+        {{aiTalkingPoints()?.anticipationsTitle}}
+      </p>
+      <div class="space-y-1.5">
+        <ng-container *ngFor="let item of aiTalkingPoints()?.anticipationsBody">
+
+        <div
+          class="border-left-width rounded-r-lg p-2.5 text-[12px] text-gray-700 leading-relaxed border-l-amber-500 bg-amber-50/40"
+        >
+         {{item}}
+        </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
