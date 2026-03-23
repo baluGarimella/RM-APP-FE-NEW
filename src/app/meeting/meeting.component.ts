@@ -12,9 +12,8 @@ import { MarketOutlook } from "./market-outlook/market-outlook";
 import { AiRecommendations } from "./ai-recommendations/ai-recommendations";
 import { RiskIndicators } from "./risk-indicators/risk-indicators";
 import { ActivatedRoute, Router } from '@angular/router';
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
 import { Meeting } from '../interfaces/meeting.interface';
+import { AiCopilotComponent } from './ai-copilot/ai-copilot.component';
  
 @Component({
   selector: 'app-meeting',
@@ -31,7 +30,8 @@ import { Meeting } from '../interfaces/meeting.interface';
     LastFiveTransactions,
     MarketOutlook,
     AiRecommendations,
-    RiskIndicators
+    RiskIndicators,
+    AiCopilotComponent
 ],
   templateUrl: './meeting.component.html',
   styleUrls: ['./meeting.component.scss']
